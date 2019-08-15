@@ -1,0 +1,62 @@
+<html>
+<head>
+    <style>
+        .bigText {
+            font-size:18pt
+        }
+        .redText {
+            color: red;
+        }
+        .smallBlueText {
+            font-size: small;
+            color: blue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+      This is some sample html/javascript.
+      It's really bad, but it's for introductory purposes
+    -->
+    <div id="mainDiv">
+      <span class="bigText">This is a place to put your name</span>
+      <br />
+      First Name <input type="text" id="firstName" maxLength="25" />
+      Surname <input type="text" id="lastName" maxlength="50" />
+      <br />
+      <input type="button" id="myButton"  value="Click Me" onclick="myButton_Click(this)" />
+      <br />
+      <input class="bigText redText" type="button" id="myButton2"  value="Red" onclick="myButton_Click(this)" />
+      <br />
+      <div class="smallBlueText">&copy;Gary Hardin 2019</div>
+    </div>
+  </body>
+
+  <!-- Some javascript event handlers and functions below -->
+
+  <script type="text/javascript">
+
+    // Here's an event handler
+    function myButton_Click(e)
+    {
+        alertTheUserTheyClickedAButton(e.value);
+    }
+
+    // Here's a function
+    function alertTheUserTheyClickedAButton(buttonName)
+    {
+      var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+
+      var fullName = firstName;
+
+      if (lastName.length > 0)
+        fullName += " " + lastName;
+
+      fullName = fullName.trim();
+
+      alert(((fullName != "") ? "Hello, " + fullName + "!" : "Hello!") + " You clicked the \"" + buttonName + "\" button");
+    }
+  </script>
+</html>
