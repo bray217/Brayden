@@ -56,7 +56,9 @@
 
       fullName = fullName.trim();
 
-      alert(((fullName != "") ? "Hello, " + fullName + "!" : "Hello stranger!") + " You clicked the \"" + buttonName + "\" button");
+      var greeting = (fullName != "") ? "Hello, " + fullName + "!" : "Hello stranger!";
+
+      alert(greeting + " You clicked the \"" + buttonName + "\" button");
     }
   </script>
 </html>
