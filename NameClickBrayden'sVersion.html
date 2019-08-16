@@ -1,0 +1,83 @@
+<html>
+<head>
+    <style>
+        .bigText {
+            font-size:18pt
+        }
+        .redText {
+            color: red;
+        }
+        .smallBlueText {
+            font-size: small;
+            color: blue;
+            margin-top: 20px;
+        }
+        /* I added this CSS */
+        .braydenText{
+          color: green;
+          font-size: 16px;
+        }
+        body{
+          background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+      This is some sample html/javascript.
+      It's really bad, but it's for introductory purposes
+    -->
+    <div id="mainDiv">
+      <span class="bigText">This is a place to put your name</span>
+      <br />
+      First Name <input type="text" id="firstName" maxLength="25" />
+      Surname <input type="text" id="lastName" maxlength="50" />
+      <br />
+      <input type="button" id="myButton"  value="Click Me" onclick="myButton_Click(this)" />
+      <br />
+      <input class="bigText redText" type="button" id="myButton2"  value="Red" onclick="myButton_Click(this)" />
+      <br />
+      
+      <div class="smallBlueText">&copy;Gary Hardin 2019</div>
+      <br />
+      <!--What I have added    (+ a new ellement in <style>)-->
+      <br />
+      <br />
+      <p class="braydenText"> does this work? </p>
+      <input type="button" id="braydenButtonOne"  value="Brayden's button"  onclick="myButton_Click(this)" class="braydenText" />
+      <br />
+      <input type="button" id="braydenButtonTwo"  value="Brayden's second button" onclick="secondButton_Click(this)" class="braydenText" />
+    </div>
+  </body>
+
+  <!-- Some javascript event handlers and functions below -->
+
+  <script type="text/javascript">
+    // Here's an event handler
+    function myButton_Click(e)
+    {
+        alertTheUserTheyClickedAButton(e.value);
+    }
+    // Here's a function
+    function alertTheUserTheyClickedAButton(buttonName)
+    {
+      var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+      var fullName = firstName;
+      if (lastName.length > 0)
+        fullName += " " + lastName;
+      fullName = fullName.trim();
+      var greeting = (fullName != "") ? "Hello, " + fullName + "!" : "Hello stranger!";
+      alert(greeting + " You clicked the \"" + buttonName + "\" button");
+    }
+
+      //adding a  function
+    function secondButton_Click(e)
+    {
+      var firstName = document.getElementById("firstName").value;
+      firstName = (firstName ==="") ? "Stranger" : firstName
+      alert( firstName + ", why did you click this button?")
+    }
+
+  </script>
+</html>
